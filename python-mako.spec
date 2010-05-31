@@ -1,5 +1,5 @@
 Name: python-mako
-Version: 0.3.2
+Version: 0.3.3
 Release: %mkrel 1
 Summary: Mako template library for Python
 
@@ -22,23 +22,18 @@ componentized layout and inheritance to produce one of the most straightforward
 and flexible models available, while also maintaining close ties to Python
 calling and scoping semantics.
 
-
 %prep
 %setup -q -n Mako-%{version}
-
 
 %build
 %{__python} setup.py build
 
-
 %install
-rm -rf %{buildroot}
+%__rm -rf %{buildroot}
 %{__python} setup.py install --skip-build --root %{buildroot}
 
- 
 %clean
-rm -rf %{buildroot}
-
+%__rm -rf %{buildroot}
 
 %files
 %defattr(-,root,root,-)
