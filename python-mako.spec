@@ -10,7 +10,7 @@ Source0: http://www.makotemplates.org/downloads/Mako-%{version}.tar.gz
 BuildRoot: %{_tmppath}/%{name}-%{version}
 BuildArch: noarch
 BuildRequires: python-setuptools
-Requires: python-beaker
+Requires: python-beaker python-markupsafe
 
 %description
 Mako is a template library written in Python. It provides a familiar, non-XML
