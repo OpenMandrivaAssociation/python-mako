@@ -1,16 +1,19 @@
-Name: python-mako
-Version: 0.3.4
-Release: %mkrel 2
-Summary: Mako template library for Python
+Name:	 python-mako
+Version: 0.3.5
+Release: %mkrel 1
 
-Group: Development/Python 
-License: MIT
-URL: http://www.makotemplates.org/
-Source0: http://www.makotemplates.org/downloads/Mako-%{version}.tar.gz
-BuildRoot: %{_tmppath}/%{name}-%{version}
-BuildArch: noarch
-BuildRequires: python-setuptools
-Requires: python-beaker python-markupsafe
+Summary:	Mako template library for Python
+Group:		Development/Python 
+License:	MIT
+URL:		http://www.makotemplates.org/
+Source0:	http://www.makotemplates.org/downloads/Mako-%{version}.tar.gz
+BuildRoot:	%{_tmppath}/%{name}-%{version}
+BuildArch:	noarch
+BuildRequires:	python-setuptools
+BuildRequires:	python-nose
+Requires:	python-beaker python-markupsafe
+
+%py_requires -d
 
 %description
 Mako is a template library written in Python. It provides a familiar, non-XML
@@ -30,7 +33,10 @@ calling and scoping semantics.
 
 %install
 %__rm -rf %{buildroot}
-%{__python} setup.py install --skip-build --root %{buildroot}
+PYTHONDONTWRITEBYTECODE= %{__python} setup.py install --skip-build --root %{buildroot}
+
+%check 
+%__python setup.py test
 
 %clean
 %__rm -rf %{buildroot}
