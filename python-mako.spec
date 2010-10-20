@@ -9,9 +9,10 @@ URL:		http://www.makotemplates.org/
 Source0:	http://www.makotemplates.org/downloads/Mako-%{version}.tar.gz
 BuildRoot:	%{_tmppath}/%{name}-%{version}
 BuildArch:	noarch
+Requires:	python-beaker, python-markupsafe
 BuildRequires:	python-setuptools
 BuildRequires:	python-nose
-Requires:	python-beaker python-markupsafe
+BuildRequires:	python-beaker, python-markupsafe
 
 %py_requires -d
 
