@@ -1,6 +1,6 @@
 Name:	 python-mako
-Version: 0.3.5
-Release: %mkrel 2
+Version: 0.3.6
+Release: %mkrel 1
 
 Summary:	Mako template library for Python
 Group:		Development/Python 
