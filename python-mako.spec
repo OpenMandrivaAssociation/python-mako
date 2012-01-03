@@ -1,19 +1,24 @@
-Name:	 python-mako
-Version: 0.4.2
-Release: %mkrel 1
+%define		tarname	Mako
+%define		name	python-mako
+%define		version	0.5.0
+%define		release	%mkrel 1
 
 Summary:	Mako template library for Python
+Name:		%{name}
+Version:	%{version}
+Release:	%{release}
 Group:		Development/Python 
 License:	MIT
 URL:		http://www.makotemplates.org/
-Source0:	http://www.makotemplates.org/downloads/Mako-%{version}.tar.gz
-BuildRoot:	%{_tmppath}/%{name}-%{version}
+Source0:	http://www.makotemplates.org/downloads/%{tarname}-%{version}.tar.gz
+BuildRoot:	%{_tmppath}/%{name}-%{version}-buildroot
 BuildArch:	noarch
-Requires:	python-beaker, python-markupsafe
+Requires:	python-beaker >= 1.1
+Requires:	python-markupsafe >= 0.9.2
 BuildRequires:	python-setuptools
 BuildRequires:	python-nose
-BuildRequires:	python-beaker, python-markupsafe
-
+BuildRequires:	python-beaker >= 1.1
+BuildRequires:	python-markupsafe >= 0.9.2
 %py_requires -d
 
 %description
@@ -27,14 +32,11 @@ and flexible models available, while also maintaining close ties to Python
 calling and scoping semantics.
 
 %prep
-%setup -q -n Mako-%{version}
-
-%build
-%{__python} setup.py build
+%setup -q -n %{tarname}-%{version}
 
 %install
 %__rm -rf %{buildroot}
-PYTHONDONTWRITEBYTECODE= %{__python} setup.py install --skip-build --root %{buildroot}
+PYTHONDONTWRITEBYTECODE= %{__python} setup.py install --root %{buildroot} --record=FILE_LIST
 
 %check 
 %__python setup.py test
@@ -42,8 +44,6 @@ PYTHONDONTWRITEBYTECODE= %{__python} setup.py install --skip-build --root %{buil
 %clean
 %__rm -rf %{buildroot}
 
-%files
+%files -f FILE_LIST
 %defattr(-,root,root,-)
 %doc CHANGES LICENSE README doc examples
-%{_bindir}/mako-render
-%{python_sitelib}/*
