@@ -1,6 +1,6 @@
 %define		tarname	Mako
 %define		name	python-mako
-%define		version	0.5.0
+%define		version	0.6.0
 %define		release	%mkrel 1
 
 Summary:	Mako template library for Python
@@ -46,4 +46,4 @@ PYTHONDONTWRITEBYTECODE= %{__python} setup.py install --root %{buildroot} --reco
 
 %files -f FILE_LIST
 %defattr(-,root,root,-)
-%doc CHANGES LICENSE README doc examples
+%doc CHANGES LICENSE README.rst doc examples
