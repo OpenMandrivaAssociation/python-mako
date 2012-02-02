@@ -36,7 +36,7 @@ calling and scoping semantics.
 
 %install
 %__rm -rf %{buildroot}
-PYTHONDONTWRITEBYTECODE= %{__python} setup.py install --root %{buildroot} --record=FILE_LIST
+PYTHONDONTWRITEBYTECODE= %{__python} setup.py install --root %{buildroot}
 
 %check 
 %__python setup.py test
@@ -44,6 +44,10 @@ PYTHONDONTWRITEBYTECODE= %{__python} setup.py install --root %{buildroot} --reco
 %clean
 %__rm -rf %{buildroot}
 
-%files -f FILE_LIST
+%files
 %defattr(-,root,root,-)
 %doc CHANGES LICENSE README.rst doc examples
+%_bindir/mako-render
+%py_sitedir/mako
+%py_sitedir/Mako*
+
