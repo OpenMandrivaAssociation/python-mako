@@ -1,6 +1,6 @@
 %define		tarname	Mako
 %define		name	python-mako
-%define		version	0.6.1
+%define		version	0.6.2
 %define		release	%mkrel 1
 
 Summary:	Mako template library for Python
