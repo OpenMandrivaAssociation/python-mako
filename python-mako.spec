@@ -1,7 +1,12 @@
 %define		tarname	Mako
 %define		name	python-mako
-%define		version	0.6.2
-%define		release	%mkrel 1
+%define		version	0.7.1
+%define		rel		1
+%if %mdkversion < 201100
+%define		release	%mkrel %{rel}
+%else
+%define		release	%{rel}
+%endif
 
 Summary:	Mako template library for Python
 Name:		%{name}
