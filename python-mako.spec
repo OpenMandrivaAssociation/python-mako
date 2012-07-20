@@ -1,6 +1,6 @@
 %define		tarname	Mako
 %define		name	python-mako
-%define		version	0.7.1
+%define		version	0.7.2
 %define		rel		1
 %if %mdkversion < 201100
 %define		release	%mkrel %{rel}
