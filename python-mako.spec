@@ -37,8 +37,8 @@ calling and scoping semantics.
 %install
 PYTHONDONTWRITEBYTECODE= %{__python} setup.py install --root %{buildroot}
 
-%check 
-%__python setup.py test
+#check 
+#__python setup.py test
 
 %files
 %doc CHANGES LICENSE README.rst doc examples
