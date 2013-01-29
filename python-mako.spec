@@ -2,11 +2,7 @@
 %define		name	python-mako
 %define		version	0.7.2
 %define		rel		1
-%if %mdkversion < 201100
-%define		release	%mkrel %{rel}
-%else
 %define		release	%{rel}
-%endif
 
 Summary:	Mako template library for Python
 Name:		%{name}
@@ -16,7 +12,6 @@ Group:		Development/Python
 License:	MIT
 URL:		http://www.makotemplates.org/
 Source0:	http://www.makotemplates.org/downloads/%{tarname}-%{version}.tar.gz
-BuildRoot:	%{_tmppath}/%{name}-%{version}-buildroot
 BuildArch:	noarch
 Requires:	python-beaker >= 1.1
 Requires:	python-markupsafe >= 0.9.2
@@ -40,17 +35,12 @@ calling and scoping semantics.
 %setup -q -n %{tarname}-%{version}
 
 %install
-%__rm -rf %{buildroot}
 PYTHONDONTWRITEBYTECODE= %{__python} setup.py install --root %{buildroot}
 
 %check 
 %__python setup.py test
 
-%clean
-%__rm -rf %{buildroot}
-
 %files
-%defattr(-,root,root,-)
 %doc CHANGES LICENSE README.rst doc examples
 %_bindir/mako-render
 %py_sitedir/mako
