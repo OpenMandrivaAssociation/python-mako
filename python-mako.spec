@@ -6,12 +6,12 @@
 
 Summary:	Mako template library for Python
 Name:		%{name}
-Version:	%{version}
-Release:	%{release}
+Version:	0.9.0
+Release:	1
 Group:		Development/Python 
 License:	MIT
 URL:		http://www.makotemplates.org/
-Source0:	http://www.makotemplates.org/downloads/%{tarname}-%{version}.tar.gz
+Source0:	http://www.makotemplates.org/downloads/Mako-%{version}.tar.gz
 BuildArch:	noarch
 Requires:	python-beaker >= 1.1
 Requires:	python-markupsafe >= 0.9.2
@@ -43,8 +43,8 @@ PYTHONDONTWRITEBYTECODE= %{__python} setup.py install --root %{buildroot}
 %files
 %doc CHANGES LICENSE README.rst doc examples
 %_bindir/mako-render
-%py_sitedir/mako
-%py_sitedir/Mako*
+%py_puresitedir/mako
+%py_puresitedir/Mako*
 
 
 
@@ -119,4 +119,5 @@ PYTHONDONTWRITEBYTECODE= %{__python} setup.py install --root %{buildroot}
 + Revision: 395019
 - First Mandriva package based on Fedora's SPEC
 - create python-mako
+
 
