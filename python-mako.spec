@@ -16,7 +16,7 @@ BuildRequires:	python-nose
 BuildRequires:	python-beaker
 BuildRequires:	python-markupsafe
 BuildRequires:	python-devel
-BuildRequires:  python3egg(setuptools)
+BuildRequires:  python3-distribute
 BuildRequires:  python3-devel
 BuildRequires:	python3-nose
 BuildRequires:	python3-beaker
