@@ -14,6 +14,7 @@ BuildRequires:	python-beaker
 BuildRequires:	python-markupsafe
 BuildRequires:	python-nose
 BuildRequires:	pkgconfig(python3)
+BuildRequires:	python-setuptools
 Requires:	python-beaker >= 1.1
 Requires:	python-markupsafe >= 0.9.2
 %rename		python3-mako
