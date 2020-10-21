@@ -61,10 +61,12 @@ mv %{tarname}-%{version} python2
 cp -r python2 python3
 
 %install
+%if %{with python2}
 cd python2
 PYTHONDONTWRITEBYTECODE=yes python2 setup.py install --root %{buildroot}
 mv %{buildroot}/%{_bindir}/mako-render %{buildroot}/%{_bindir}/python2-mako-render
 cd ..
+%endif
 
 cd python3
 PYTHONDONTWRITEBYTECODE=yes python setup.py install --root %{buildroot}
