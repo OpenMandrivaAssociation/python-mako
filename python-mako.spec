@@ -1,14 +1,14 @@
-%define		tarname	Mako
+%define tarname Mako
 %bcond_without python2
 
 Summary:	Mako template library for Python
 Name:		python-mako
 Version:	1.1.3
-Release:	1
+Release:	2
 Group:		Development/Python
 License:	MIT
 Url:		http://www.makotemplates.org/
-Source0:	https://files.pythonhosted.org/packages/72/89/402d2b4589e120ca76a6aed8fee906a0f5ae204b50e455edd36eda6e778d/Mako-1.1.3.tar.gz
+Source0:	https://files.pythonhosted.org/packages/72/89/402d2b4589e120ca76a6aed8fee906a0f5ae204b50e455edd36eda6e778d/Mako-%{version}.tar.gz
 BuildArch:	noarch
 BuildRequires:	python-beaker
 BuildRequires:	python-markupsafe
@@ -61,14 +61,14 @@ mv %{tarname}-%{version} python2
 cp -r python2 python3
 
 %install
-pushd python2
+cd python2
 PYTHONDONTWRITEBYTECODE=yes python2 setup.py install --root %{buildroot}
 mv %{buildroot}/%{_bindir}/mako-render %{buildroot}/%{_bindir}/python2-mako-render
-popd
+cd ..
 
-pushd python3
+cd python3
 PYTHONDONTWRITEBYTECODE=yes python setup.py install --root %{buildroot}
-popd
+cd ..
 
 #check
 #__python setup.py test
