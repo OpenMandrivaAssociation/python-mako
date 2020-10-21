@@ -1,5 +1,5 @@
 %define tarname Mako
-%bcond_without python2
+%bcond_with python2
 
 Summary:	Mako template library for Python
 Name:		python-mako
