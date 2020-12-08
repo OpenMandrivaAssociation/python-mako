@@ -4,7 +4,7 @@
 Summary:	Mako template library for Python
 Name:		python-mako
 Version:	1.1.3
-Release:	2
+Release:	3
 Group:		Development/Python
 License:	MIT
 Url:		http://www.makotemplates.org/
