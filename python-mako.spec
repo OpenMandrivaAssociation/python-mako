@@ -3,12 +3,12 @@
 
 Summary:	Mako template library for Python
 Name:		python-mako
-Version:	1.2.2
+Version:	1.2.3
 Release:	1
 Group:		Development/Python
 License:	MIT
 Url:		http://www.makotemplates.org/
-Source0:	https://files.pythonhosted.org/packages/6d/f2/8ad2ec3d531c97c4071572a4104e00095300e278a7449511bee197ca22c9/Mako-1.2.2.tar.gz
+Source0:	https://files.pythonhosted.org/packages/source/M/Mako/Mako-%{version}.tar.gz
 BuildArch:	noarch
 BuildRequires:	python-beaker
 BuildRequires:	python-markupsafe
