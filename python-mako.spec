@@ -7,7 +7,7 @@ Version:	1.3.5
 Release:	1
 Group:		Development/Python
 License:	MIT
-Url:		http://www.makotemplates.org/
+Url:		https://www.makotemplates.org/
 Source0:	https://files.pythonhosted.org/packages/source/M/Mako/Mako-%{version}.tar.gz
 BuildArch:	noarch
 BuildRequires:	python-beaker
