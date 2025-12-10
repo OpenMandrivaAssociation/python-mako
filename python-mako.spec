@@ -19,6 +19,7 @@ BuildRequires:	python-pkg-resources
 Requires:	python-beaker >= 1.1
 Requires:	python-markupsafe >= 0.9.2
 %rename		python3-mako
+BuildSystem:  python
 
 %description
 Mako is a template library written in Python. It provides a familiar, non-XML
@@ -29,12 +30,6 @@ Python (i.e. Python Server Page) language, which refines the familiar ideas of
 componentized layout and inheritance to produce one of the most straightforward
 and flexible models available, while also maintaining close ties to Python
 calling and scoping semantics.
-
-%prep
-%setup -q
-
-%install
-PYTHONDONTWRITEBYTECODE=yes python setup.py install --root %{buildroot}
 
 %files
 %doc python3/CHANGES python3/LICENSE python3/README.rst python3/doc python3/examples
