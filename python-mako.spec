@@ -30,8 +30,6 @@ componentized layout and inheritance to produce one of the most straightforward
 and flexible models available, while also maintaining close ties to Python
 calling and scoping semantics.
 
-%endif
-
 %prep
 %setup -q
 
