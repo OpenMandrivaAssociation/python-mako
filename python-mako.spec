@@ -12,7 +12,8 @@ Source0:	https://files.pythonhosted.org/packages/source/m/mako/mako-%{version}.t
 BuildArch:	noarch
 BuildRequires:	python-beaker
 BuildRequires:	python-markupsafe
-BuildRequires:	python-nose
+# Nose looks like abandonware without support for new python
+#BuildRequires:	python-nose
 BuildRequires:	pkgconfig(python3)
 BuildRequires:	python-setuptools
 BuildRequires:	python-pkg-resources
