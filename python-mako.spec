@@ -32,7 +32,4 @@ and flexible models available, while also maintaining close ties to Python
 calling and scoping semantics.
 
 %files
-%doc python3/CHANGES python3/LICENSE python3/README.rst python3/doc python3/examples
 %{_bindir}/mako-render
-%{py_puresitedir}/mako
-%{py_puresitedir}/Mako*
