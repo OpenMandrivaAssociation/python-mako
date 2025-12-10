@@ -33,3 +33,5 @@ calling and scoping semantics.
 
 %files
 %{_bindir}/mako-render
+%{python_sitelib}/mako-%{version}.dist-info
+%{python_sitelib}/mako/
