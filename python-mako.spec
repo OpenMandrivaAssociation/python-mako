@@ -1,25 +1,24 @@
-%define tarname Mako
+%define module mako
 
 Summary:	Mako template library for Python
 Name:		python-mako
-Version:	1.3.10
-Release:	2
+Version:	1.3.11
+Release:	1
 Group:		Development/Python
 License:	MIT
 Url:		https://www.makotemplates.org/
-Source0:	https://files.pythonhosted.org/packages/source/m/mako/mako-%{version}.tar.gz
+Source0:	https://files.pythonhosted.org/packages/source/m/%{module}/%{module}-%{version}.tar.gz#/%{name}-%{version}.tar.gz
+
+BuildSystem:	python
 BuildArch:	noarch
-BuildRequires:	python-beaker
-BuildRequires:	python-markupsafe
-# Nose looks like abandonware without support for new python
-#BuildRequires:	python-nose
 BuildRequires:	pkgconfig(python3)
-BuildRequires:	python-setuptools
-BuildRequires:	python-pkg-resources
-Requires:	python-beaker >= 1.1
-Requires:	python-markupsafe >= 0.9.2
+BuildRequires:	python%{pyver}dist(beaker)
+BuildRequires:	python%{pyver}dist(markupsafe)
+BuildRequires:	python%{pyver}dist(pip)
+BuildRequires:	python%{pyver}dist(setuptools)
+BuildRequires:	python%{pyver}dist(wheel)
+Requires:	python%{pyver}dist(beaker) >= 1.1
 %rename		python3-mako
-BuildSystem:  python
 
 %description
 Mako is a template library written in Python. It provides a familiar, non-XML
@@ -33,5 +32,5 @@ calling and scoping semantics.
 
 %files
 %{_bindir}/mako-render
-%{python_sitelib}/mako-%{version}.dist-info
-%{python_sitelib}/mako/
+%{python_sitelib}/%{module}
+%{python_sitelib}/%{module}-%{version}.dist-info
